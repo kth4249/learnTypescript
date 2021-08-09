@@ -1,25 +1,3 @@
-// 함수에서 타입 정의하기
-
-//                                  반환형 타입
-function sum(x: number, y: number): number {
-    return x + y;
-    // return null; // 오류 발생!
-}
-
-sum(1, 2);
-
-function sumArray(numbers: number[]): number {
-    // 배열의 내장함수를 사용 할 때에도 타입 유추가 잘 이루어짐
-    return numbers.reduce((acc, current) => acc + current, 0);
-}
-
-const total = sumArray([1, 2, 3, 4, 5]);
-
-// 함수가 아무것도 반환하지 않아야 할 때
-function returnNothing(): void {
-    console.log('I am just saying hello world');
-}
-
 //// interface 사용해보기
 
 // 클래스에서 interface를 implements 하기
@@ -32,9 +10,8 @@ interface Shape {
 
 class Circle implements Shape {
     // 'implements' 키워드를 사용하여 해당 클래스가 Shape interface의 조건을 충족하겠다는 것을 명시합니다.
-    radius: number; // 멤버 변수 radius 값을 설정합니다.
-
-    constructor(radius: number) {
+    
+    constructor(public radius: number) { // public 멤버 변수 설정
         this.radius = radius;
     }
 
@@ -45,9 +22,7 @@ class Circle implements Shape {
 }
 
 class Rectangle implements Shape {
-    width: number;
-    height: number;
-    constructor(width: number, height: number) {
+    constructor(private width: number, private height: number) { // private 멤버 변수 설정
         this.width = width;
         this.height = height;
     }
@@ -55,6 +30,11 @@ class Rectangle implements Shape {
         return this.width * this.height;
     }
 }
+
+const circle = new Circle(5);
+const rectangle = new Rectangle(10, 5);
+
+console.log(circle.radius);
 
 const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
 
