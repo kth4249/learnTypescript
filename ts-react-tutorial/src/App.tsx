@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-import Counter from "./Counter";
-import Greetings from "./Greetings";
+import MyForm from "./MyForm";
 
 // const App: React.FC = () => {
 //   const onClick = (name: string) => {
@@ -10,7 +9,11 @@ import Greetings from "./Greetings";
 //   return <Greetings name="React" onClick={onClick} />;
 // };
 const App: React.FC = () => {
-  return <Counter />
-}
+  // return <Counter />
+  const onSubmit = (form: { name: string; description: string }) => {
+    console.log(form);
+  };
+  return <MyForm onSubmit={onSubmit} />;
+};
 
 export default App;
