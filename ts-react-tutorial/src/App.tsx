@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ReducerSample from "./ReducerSample";
+import { SampelProvider } from "./SampleContext";
 
 // const App: React.FC = () => {
 //   const onClick = (name: string) => {
@@ -14,7 +15,11 @@ const App: React.FC = () => {
   //   console.log(form);
   // };
   // return <MyForm onSubmit={onSubmit} />;
-  return <ReducerSample />;
+  return (
+    <SampelProvider>
+      <ReducerSample />;
+    </SampelProvider>
+  )
 };
 
 export default App;
