@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { useSampleDispatch, useSampleState } from "./SampleContext";
 
 // type Color = "red" | "orange" | "yellow";
