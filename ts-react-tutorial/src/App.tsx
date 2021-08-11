@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import MyForm from "./MyForm";
+import ReducerSample from "./ReducerSample";
 
 // const App: React.FC = () => {
 //   const onClick = (name: string) => {
@@ -10,10 +10,11 @@ import MyForm from "./MyForm";
 // };
 const App: React.FC = () => {
   // return <Counter />
-  const onSubmit = (form: { name: string; description: string }) => {
-    console.log(form);
-  };
-  return <MyForm onSubmit={onSubmit} />;
+  // const onSubmit = (form: { name: string; description: string }) => {
+  //   console.log(form);
+  // };
+  // return <MyForm onSubmit={onSubmit} />;
+  return <ReducerSample />;
 };
 
 export default App;
